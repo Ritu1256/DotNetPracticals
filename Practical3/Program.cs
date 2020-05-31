@@ -1,166 +1,113 @@
-﻿/* Practical 3: Write C# code to do the  following 
- * a. Convert binary to decimal 
- * b. Convert decimal to hexadecimal 
- * c. Convert decimal to binary 
- * d. Convert decimal to octal
- */
-using System;
-using System.Text.RegularExpressions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Practical3
 {
     class Program
     {
-        static void Main(string[] args)
+        
+        
+            static void Main(string[] args)
         {
-            int decimalNumber;
-
-            #region Binary To Decimal
-            bool flag = true;
-            string binaryString;
-
-            //Take and validate user input in string format
-            Console.WriteLine("Enter a binary number(31 bit Max)");
-            do
-            {
-                if (!flag) //Only execute if user enters anything except 0 and 1
-                    Console.WriteLine("Please enter a valid binary value");
-                binaryString = Console.ReadLine();
-                flag = false; //will display error message in every subsequent iteration of this loop (if this loop continuous)
-            } while (!Regex.IsMatch(binaryString, @"^[01]+$")); //Checking input string for anything other than 0s and 1s
-
-            ConvertBinaryToDecimal(binaryString, out decimalNumber);
-            Console.WriteLine("Answer: " + decimalNumber);
-
-            #endregion
-
-            #region Decimal To Octal and Binary
-
-            //Declaration and initialisation
-            int number, newBase;
-
-            TakeDecimalInput(out decimalNumber);
-
-            Console.WriteLine("In which base you want to convert? (2 or 8)");
-            newBase = int.Parse(Console.ReadLine());
-
-            ConvertDecimalToBinaryOrOctal(decimalNumber, out number, newBase);
-            Console.WriteLine(number);
-
-            #endregion
-
-            #region Decimal To HexaDecimal
-            string hex;
-            TakeDecimalInput(out decimalNumber);
-            ConvertDecimalToHex(decimalNumber, out hex);
-            Console.WriteLine($"Hexadecimal equivalent of {decimalNumber} is {hex}");
-            #endregion
-
+            decimalToBinary();
+            Console.Read();
+            decimalToHex();
+            Console.Read();
+            decimalToOctal();
+            Console.Read();
+            binaryToDecimal();
             Console.Read();
         }
-
-        #region Conversion Methods
-
-        
-        private static void ConvertDecimalToHex(int decimalNumber, out string hex)
+        static void decimalToBinary()
         {
-            char[] modulo = new char[31]; //To store all the modulos of a decimal mumber after iteratively dividing by 8
-            int i = 0, temp;
-            hex = "";
-            //Find all the modulos and store them in an integer array
-            while (decimalNumber > 0)
+            Console.WriteLine("Enter number for Decimal to Binary Conversion:");
+              int x = Int32.Parse(Console.ReadLine().ToString());
+            int reminder, i = 0;
+            int[] binary = new int[100];
+       
+            while (x > 0)
             {
-                temp = (char)(decimalNumber % 16);
-                if (temp > 9)
-                    modulo[i] = (char)(temp + 55);
-                else
-                    modulo[i] = (char)(temp+48);
-                decimalNumber /= 16;
+                reminder = x % 2;
+                binary[i] = reminder;
+                x /= 2;
                 i++;
             }
-
-            i--; //decrease by 1 to manage the actual length of the number
-
-            //
-            for (; i >= 0; i--)
+            for (int j = i - 1; j >= 0; j--)
             {
-                hex += modulo[i];
+                Console.Write(binary[j]);
             }
-        }
 
-       
-        /// <summary>
-        /// Converts decimal input to equivalent octal number
-        /// </summary>
-        /// <param name="decimalNumber">Decimal Number from user</param>
-        /// <param name="number">Converted Octal Number will be returned in this variable</param>
-        private static void ConvertDecimalToBinaryOrOctal(int decimalNumber, out int number, int newBase)
+        }
+        static void decimalToOctal()
         {
-            number = 0;
-            int[] modulo = new int[31]; //To store all the modulos of a decimal mumber after iteratively dividing by 8
+            Console.WriteLine("Enter number for Decimal to Octal Conversion:");
+            int x = Int32.Parse(Console.ReadLine().ToString());
+   
+            int[] octalNum = new int[100];
             int i = 0;
-            string numberString = ""; //To form a single string of all the modulos togather
-
-            //Find all the modulos and store them in an integer array
-            while(decimalNumber>0)
+            while (x != 0)
             {
-                modulo[i++] = decimalNumber % newBase;
-                decimalNumber /= newBase;
+
+                octalNum[i] = x % 8;
+                x = x / 8;
+                i++;
             }
-
-            i--; //decrease by 1 to manage the actual length of the number
-
-            //
-            for (; i >= 0 ; i--)
+            for (int j = i - 1; j >= 0; j--)
             {
-                numberString += modulo[i].ToString();
+                Console.Write(octalNum[j]);
             }
-            number = int.Parse(numberString);
         }
-
-        /// <summary>
-        /// Converts a string of 0s and 1s to equivalent decimal number
-        /// </summary>
-        /// <param name="binaryString">string of 0s and 1s</param>
-        /// <param name="decimalNumber">store the converted decimal number</param>
-        private static void ConvertBinaryToDecimal(string binaryString, out int decimalNumber)
+        static void decimalToHex()
         {
-            //Variable declaration and initialisation
-            decimalNumber = 0; //To store converted decimal number
-            int bit; //to store individual bit from right to left while calculating decimal from binary
-            int powerCounter = 0; //To manage the exponent of 2
-           
-            //Convertion of Binary to Decimal
-            for (int i = binaryString.Length - 1; i >= 0; i--)
+
+            Console.WriteLine("Enter number for Decimal to Hex Conversion:");
+            int x = Int32.Parse(Console.ReadLine().ToString());
+            Console.Write("Decimal To Hex Conversion:");
+            int reminder, i = 0;
+            char[] hex = new char[100];
+            while (x > 0)
             {
-                bit = int.Parse(binaryString[i].ToString());
-                decimalNumber += bit * (int)Math.Pow(2, powerCounter++);
+                reminder = x % 16;
+                if (reminder > 9)
+                {
+                    hex[i] = (char)(reminder + 55);
+                }
+                else
+                {
+                    hex[i] = (char)(reminder + 48);
+                }
+                x /= 16;
+                i++;
             }
-        }
-        #endregion
-
-        #region Helper Method
-        /// <summary>
-        /// Prompt user to input decimal number
-        /// </summary>
-        /// <param name="decimalNumber"></param>
-        /// <param name="numberString"></param>
-        private static void TakeDecimalInput(out int decimalNumber)
-        {
-            string numberString;
-            bool flag = true; //to display error message while user enters invalid binary/decimal number
-
-            //Take and validate user input
-            Console.Write("Enter Decimal Number: ");
-            do
+            for (int j = i - 1; j >= 0; j--)
             {
-                if (!flag) //only execute if user have entered invalid decimal number
-                    Console.WriteLine("Please enter a valid decimal number");
-                numberString = Console.ReadLine();
-                flag = false; //will display error message in every subsequent iteration of this loop (if this loop continuous)
-            } while (!int.TryParse(numberString, out decimalNumber));
-        }
+                Console.Write(hex[j]);
+            }
 
-        #endregion
+
+        }
+        public static void binaryToDecimal()
+        {
+            Console.WriteLine("Enter number for Binary to Decimal Conversion:");
+            int binaryNumber = Int32.Parse(Console.ReadLine().ToString());
+            int base1 = 1;
+            int decimalValue = 0;
+            while (binaryNumber > 0)
+            {
+                int reminder = binaryNumber % 10;
+                binaryNumber = binaryNumber / 10;
+                decimalValue += reminder * base1;
+                base1 = base1 * 2;
+
+
+            }
+            Console.WriteLine(decimalValue);
+            Console.Read();
+        
+
+   
+        }
     }
 }

@@ -1,0 +1,4 @@
+D:\17ce038\DotNetPracticals\Hello World\bin\Debug\Hello World.exe
+D:\17ce038\DotNetPracticals\Hello World\bin\Debug\Hello World.pdb
+D:\17ce038\DotNetPracticals\Hello World\obj\x86\Debug\Hello World.exe
+D:\17ce038\DotNetPracticals\Hello World\obj\x86\Debug\Hello World.pdb
