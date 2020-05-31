@@ -1,0 +1,9 @@
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical8\bin\Debug\Practical8.exe.config
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical8\bin\Debug\Practical8.exe
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical8\bin\Debug\Practical8.pdb
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical8\obj\Debug\Practical8.csprojAssemblyReference.cache
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical8\obj\Debug\Practical8.Form1.resources
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical8\obj\Debug\Practical8.Properties.Resources.resources
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical8\obj\Debug\Practical8.csproj.GenerateResource.cache
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical8\obj\Debug\Practical8.exe
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical8\obj\Debug\Practical8.pdb

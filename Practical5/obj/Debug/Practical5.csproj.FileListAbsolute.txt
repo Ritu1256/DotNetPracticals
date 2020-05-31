@@ -1,0 +1,6 @@
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical5\bin\Debug\Practical5.exe.config
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical5\bin\Debug\Practical5.exe
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical5\bin\Debug\Practical5.pdb
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical5\obj\Debug\Practical5.csprojAssemblyReference.cache
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical5\obj\Debug\Practical5.exe
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical5\obj\Debug\Practical5.pdb

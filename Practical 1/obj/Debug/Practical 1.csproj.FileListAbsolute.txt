@@ -1,0 +1,13 @@
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical 1\bin\Debug\Practical 1.exe.config
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical 1\bin\Debug\Practical 1.exe
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical 1\bin\Debug\Practical 1.pdb
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical 1\obj\Debug\Practical 1.csprojAssemblyReference.cache
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical 1\obj\Debug\Practical 1.exe
+C:\Users\Chirag\source\repos\DotNetPracticals\Practical 1\obj\Debug\Practical 1.pdb
+C:\Users\Chirag Patel\Source\Repos\DotNetPracticals\Practical 1\bin\Debug\Practical 1.exe.config
+C:\Users\Chirag Patel\Source\Repos\DotNetPracticals\Practical 1\bin\Debug\Practical 1.exe
+C:\Users\Chirag Patel\Source\Repos\DotNetPracticals\Practical 1\bin\Debug\Practical 1.pdb
+C:\Users\Chirag Patel\Source\Repos\DotNetPracticals\Practical 1\obj\Debug\Practical 1.csprojAssemblyReference.cache
+C:\Users\Chirag Patel\Source\Repos\DotNetPracticals\Practical 1\obj\Debug\Practical 1.csproj.CoreCompileInputs.cache
+C:\Users\Chirag Patel\Source\Repos\DotNetPracticals\Practical 1\obj\Debug\Practical 1.exe
+C:\Users\Chirag Patel\Source\Repos\DotNetPracticals\Practical 1\obj\Debug\Practical 1.pdb
